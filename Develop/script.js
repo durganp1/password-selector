@@ -18,18 +18,37 @@ var passwordSize = function(event) {
     else if (promptSize > 8 && promptSize < 128) {
       alert("You have chosen " + promptSize + " characters.")
     }
+    characterSelection();
   };
+var characterSelection = function() {
+  var confirmUpperCase = confirm("Would you like to use UPPERCASE in your password?");
+    if (confirmUpperCase) {
+      
+    }
+  var confirmLowerCase = confirm("Would you like to use lowercase in your password?");
+    if (confirmLowerCase) {
+      
+    }
+  var confirmNumbers = confirm("Would you like to use numbers in your password?");
+    if (confirmNumbers) {
+      
+    }
+  var confirmSymbols = confirm("Would you like to use symbols in your password?");
+    if (confirmSymbols) {
+    
+    }
+}
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+// function writePassword() {
+//   var password = generatePassword();
+//   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+//   passwordText.value = password;
 
-}
+// }
 
 // Add event listener to generate button
 //generateBtn.addEventListener("click", writePassword);
