@@ -22,20 +22,12 @@ var passwordSize = function(event) {
   };
 var characterSelection = function() {
   var confirmUpperCase = confirm("Would you like to use UPPERCASE in your password?");
-    if (confirmUpperCase) {
-      
-    }
   var confirmLowerCase = confirm("Would you like to use lowercase in your password?");
-    if (confirmLowerCase) {
-      
-    }
   var confirmNumbers = confirm("Would you like to use numbers in your password?");
-    if (confirmNumbers) {
-      
-    }
   var confirmSymbols = confirm("Would you like to use symbols in your password?");
-    if (confirmSymbols) {
-    
+    if (confirmUpperCase === false && confirmLowerCase === false && confirmNumbers === false && confirmSymbols === false) {
+      alert("You need to choose at least one option!");
+      return false;
     }
 }
 // Get references to the #generate element
