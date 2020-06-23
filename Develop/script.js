@@ -18,6 +18,7 @@ var confirmLowerCase;
 var confirmNumbers;
 var confirmSymbols;
 var userPassword = "";
+var promptSize = "";
 var passwordSize = function(event) {
   var promptSize = prompt("How many characters would you like your password to be?  Please choose between 8 - 128"); 
     if (promptSize < 8 || promptSize > 128 || !promptSize) {
@@ -43,55 +44,39 @@ var characterSelection = function(promptSize) {  
     }
 };
 var userChoices = function(promptSize) {
-    debugger;
     if (confirmUpperCase === true) {
-   for (var i = userPassword.length; i < promptSize; i++) {
+      for ( i = userPassword.length; i < promptSize; i++) {
       var upperPassword = upperCaseArr[Math.floor(Math.random() * upperCaseArr.length)];
       userPassword += upperPassword;
-    };
-  };
-    // else {
-    //   alert("Your new password is " + userPassword);
-    //   return;
-    // }
-
-  
+      break;
+    }
+  }
     if (confirmLowerCase === true) {
-  for (var i = userPassword.length; i < promptSize; i++) {
+      for ( i = userPassword.length; i < promptSize; i++) {
       var lowerPassword = lowerCaseArr[Math.floor(Math.random() * lowerCaseArr.length)];
       userPassword += lowerPassword;
-    };
-  };
-    // else {
-    //   alert("Your new password is " + userPassword);
-    //   return;
-    // }
-  
-  
+      break;
+    }
+  }
     if (confirmNumbers === true) {
-  for (var i = userPassword.length; i < promptSize; i++) {
+      for ( i = userPassword.length; i < promptSize; i++) {
       var numberPassword = numbersArr[Math.floor(Math.random() * numbersArr.length)];
       userPassword += numberPassword;
-    };
-  };
-    // else {
-    //   alert("Your new password is " + userPassword);
-    //   return;
-    // }
-
-  
+      break;
+    }
+  }
     if (confirmSymbols === true) {
-  for (var i = userPassword.length; i < promptSize; i++) {
+      for ( i = userPassword.length; i < promptSize; i++) {
       var symbolPassword = symbolsArr[Math.floor(Math.random() * symbolsArr.length)];
       userPassword += symbolPassword;
-    };
-  }
-    else if 
-      (userPassword.length === promptSize); {
-      alert("Your new password is " + userPassword);
-      return;
+      break;
     }
-  
+  } 
+  if (userPassword.length === parseInt(promptSize)) {
+      alert("Your new password is " + userPassword);
+    } else {
+      return (userChoices(promptSize));
+    }
 };
 
 // Get references to the #generate element
