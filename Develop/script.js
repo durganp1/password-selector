@@ -73,7 +73,8 @@ var userChoices = function(promptSize) {
     }
   } 
   if (userPassword.length === parseInt(promptSize)) {
-      alert("Your new password is " + userPassword);
+     //  alert("Your new password is " + userPassword);
+      document.getElementById('password').innerHTML = userPassword;
     } else {
       return (userChoices(promptSize));
     }
